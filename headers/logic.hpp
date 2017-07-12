@@ -5,7 +5,7 @@
 
 namespace chat {
     namespace logic {
-        class logic {
+        class core {
         private:
             ini::inifile                 var_settings;
             std::unique_ptr <chat::user> var_user;
