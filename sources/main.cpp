@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #include "SFML/Graphics.hpp"
 #include "../headers/logic.hpp"
 
@@ -15,3 +16,8 @@ int main() {
 }
 
 //exception handling
+=======
+int main() {
+	return 0;
+}
+>>>>>>> Stashed changes

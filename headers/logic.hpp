@@ -1,3 +1,5 @@
+#ifndef CHAT_LOGIC
+#define CHAT_LOGIC
 #include <memory>
 #include <string>
 #include "ini/inifile.hpp"
@@ -15,3 +17,5 @@ namespace chat {
         };
     }
 }
+
+#endif

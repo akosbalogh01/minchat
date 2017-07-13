@@ -1,3 +1,5 @@
+#ifndef CHAT_GFX_CURSOR
+#define CHAT_GFX_CURSOR
 #include "SFML/Graphics.hpp"
 #include "../headers/interfaces.hpp"
 
@@ -23,3 +25,5 @@ namespace chat {
         };
     }
 }
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef CHAT_GFX_TEXTBOX
+#define CHAT_GFX_TEXTBOX
 #include <string>
 #include <SFML/Graphics.hpp>
 #include "../headers/interfaces.hpp"
@@ -25,3 +27,5 @@ namespace chat {
         }; 
     }
 }
+
+#endif

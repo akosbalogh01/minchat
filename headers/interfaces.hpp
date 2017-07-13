@@ -1,3 +1,8 @@
+#ifndef CHAT_INTERFACES
+#define CHAT_INTERFACES
+#include <memory>
+#include "SFML/Graphics.hpp"
+
 namespace interfaces {
     class renderable {
     public:
@@ -16,3 +21,14 @@ namespace interfaces {
         virtual void decompress() = 0;
     };
 }
+
+namespace chat {
+	namespace graphics {
+		class unit {
+		protected:
+			std::shared_ptr <sf::RenderWindow> var_rendertarget;	
+		};
+	}
+}
+
+#endif
