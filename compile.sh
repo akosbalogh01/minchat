@@ -6,7 +6,7 @@ g++ -std=c++14 -Wall    -c sources/logic.cpp            -o objects/logic.o
 g++ -std=c++14 -Wall    -c sources/user.cpp             -o objects/user.o
 g++ -std=c++14 -Wall    -c sources/cursor.cpp           -o objects/cursor.o
 g++ -std=c++14 -Wall    -c sources/textbox.cpp          -o objects/textbox.o
-
+g++ -std=c++14 -Wall    -c sources/graphics.cpp         -o objects/graphics.o
 g++ -std=c++14 -Wall    -c sources/ini/inifile.cpp      -o objects/inifile.o
 g++ -std=c++14 -Wall    -c sources/ini/key.cpp          -o objects/inikey.o
 g++ -std=c++14 -Wall    -c sources/ini/load.cpp         -o objects/iniload.o
