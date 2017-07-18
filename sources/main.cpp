@@ -7,11 +7,14 @@ int main() {
      program.loadSettings("release/settings");
      
      chat::graphics::core graphics;
-     //while (program.isRunning()) {
-     //    logic.processEvents();
+     program.setRenderTarget(graphics.renderTarget());
+
+     while (program.isRunning()) {
+         program.processEvents();
      //    logic.processInput();
      //    graphics.render();
-     //}     
+     }
+
      return 0;
 }
 

@@ -23,12 +23,19 @@ namespace interfaces {
 }
 
 namespace chat {
-	namespace graphics {
-		class unit {
-		protected:
-			std::shared_ptr <sf::RenderWindow> var_rendertarget;	
-		};
-	}
+    namespace graphics {
+    	class unit {
+	protected:
+            std::shared_ptr <sf::RenderWindow> var_rendertarget;	
+    	};
+    }
+
+    namespace logic {
+        class unit {
+        protected:
+            std::shared_ptr <sf::Event> var_event;
+        };
+    }
 }
 
 #endif
