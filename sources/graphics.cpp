@@ -9,3 +9,13 @@ chat::graphics::core::core() {
 const std::shared_ptr <sf::RenderWindow> chat::graphics::core::renderTarget() const {
     return var_rendertarget;
 }
+
+void chat::graphics::core::render() {
+    var_rendertarget.get()->clear(sf::Color::Blue);
+
+    for (const auto& render_index: var_renderlist) {
+        render_index->render();
+    }
+
+    var_rendertarget.get()->display();
+}

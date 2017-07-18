@@ -12,7 +12,7 @@ int main() {
      while (program.isRunning()) {
          program.processEvents();
      //    logic.processInput();
-     //    graphics.render();
+         graphics.render();
      }
 
      return 0;
