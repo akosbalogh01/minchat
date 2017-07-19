@@ -13,7 +13,9 @@ namespace chat {
 	public:
             core();
             const std::shared_ptr <sf::RenderWindow> renderTarget() const;
+            const std::vector <std::unique_ptr <interfaces::renderable>>& renderList();
             void render();
+            const sf::Vector2f& windowSize() const;
         };
     }
 }

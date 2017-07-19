@@ -19,19 +19,6 @@ void chat::logic::core::loadSettings(const std::string& filepath) {
     var_running  = true;
 }
 
-void chat::logic::core::processEvents() {
-    while (var_rendertarget.get()->pollEvent(*var_event.get())) {
-        switch (var_event.get()->type) {
-            case sf::Event::Closed: 
-                var_rendertarget.get()->close();
-                var_running = false;
-                break;                
-                
-            default: break;
-        } 
-    }
-}
-
 void chat::logic::core::setRenderTarget(const std::shared_ptr <sf::RenderWindow>& param) {
     var_rendertarget = param;
 }

@@ -1,5 +1,7 @@
 #include <memory>
+#include <vector>
 #include "SFML/Graphics.hpp"
+#include "../headers/interfaces.hpp"
 #include "../headers/graphics.hpp"
 
 chat::graphics::core::core() {
@@ -8,6 +10,10 @@ chat::graphics::core::core() {
 
 const std::shared_ptr <sf::RenderWindow> chat::graphics::core::renderTarget() const {
     return var_rendertarget;
+}
+
+const std::vector <std::unique_ptr <interfaces::renderable>>& chat::graphics::core::renderList() {
+    return var_renderlist;
 }
 
 void chat::graphics::core::render() {
