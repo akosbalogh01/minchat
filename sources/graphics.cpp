@@ -3,9 +3,15 @@
 #include "SFML/Graphics.hpp"
 #include "../headers/interfaces.hpp"
 #include "../headers/graphics.hpp"
+const std::string  windowname   = "Chat client";
+const unsigned int windowwidth  = 1024;
+const unsigned int windowheight = 768;
+const unsigned int framelimit   = 60;
+
 
 chat::graphics::core::core() {
-    var_rendertarget = std::make_shared <sf::RenderWindow> (sf::VideoMode(1024, 768), "Chat client");
+    var_rendertarget = std::make_shared <sf::RenderWindow> (sf::VideoMode(windowwidth, windowheight), windowname);
+    var_rendertarget.get()->setFramerateLimit(framelimit);
 }
 
 const std::shared_ptr <sf::RenderWindow> chat::graphics::core::renderTarget() const {
