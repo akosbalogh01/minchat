@@ -1,5 +1,10 @@
+#include <memory>
 #include <string>
 #include "../headers/textbox.hpp"
+
+chat::graphics::textbox::textbox(const std::shared_ptr <sf::RenderWindow>& param) {
+    var_rendertarget = param;
+}
 
 void chat::graphics::textbox::render() {
     //do stuff

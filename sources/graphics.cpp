@@ -7,6 +7,7 @@ const std::string  windowname   = "Chat client";
 const unsigned int windowwidth  = 1024;
 const unsigned int windowheight = 768;
 const unsigned int framelimit   = 60;
+const sf::Color    bgcolor      = sf::Color(128, 128, 128);
 
 
 chat::graphics::core::core() {
@@ -23,7 +24,7 @@ const std::vector <std::unique_ptr <interfaces::renderable>>& chat::graphics::co
 }
 
 void chat::graphics::core::render() {
-    var_rendertarget.get()->clear(sf::Color::Blue);
+    var_rendertarget.get()->clear(bgcolor);
 
     for (const auto& render_index: var_renderlist) {
         render_index->render();
