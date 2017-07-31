@@ -1,5 +1,5 @@
-#ifndef CHAT_GRAPHICS_RENDERVECTOR
-#define CHAT_GRAPHICS_RENDERVECTOR
+#ifndef CHAT_GFX_RENDERVECTOR
+#define CHAT_GFX_RENDERVECTOR
 #include <vector>
 #include <memory>
 #include "interfaces.hpp"
@@ -13,8 +13,8 @@ namespace chat {
         public:
             rendervector(const std::shared_ptr <sf::RenderWindow>&);
 
-            void add(const std::unique_ptr <interfaces::renderable>&);
-            void render(); 
+            void add(std::unique_ptr <interfaces::renderable>&);
+            void render();
         };
     }
 }

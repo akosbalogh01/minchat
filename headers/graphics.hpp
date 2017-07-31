@@ -3,18 +3,27 @@
 #include <vector>
 #include <memory>
 #include "interfaces.hpp"
+#include "rendervector.hpp"
 
 namespace chat {
     namespace graphics {
 	class core: public unit {
-	private:
-            std::vector <std::unique_ptr <interfaces::renderable>> var_renderlist;
+        public:
+            typedef enum {MAIN = 0} rendervector_type;
 
-	public:
+        private:
+            std::vector <chat::graphics::rendervector> var_renderlist;
+            rendervector_type var_selected_renderlist_index;
+            void init_render_vectors();
+
+        public:
             core();
-            const std::shared_ptr <sf::RenderWindow> renderTarget() const;
-            const std::vector <std::unique_ptr <interfaces::renderable>>& renderList();
+
+            const std::shared_ptr <sf::RenderWindow>& renderTarget() const;
+
             void render();
+            void setRenderVectorTo(const rendervector_type);
+
             const sf::Vector2f& windowSize() const;
         };
     }

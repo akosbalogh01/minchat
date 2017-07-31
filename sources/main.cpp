@@ -3,19 +3,18 @@
 #include "../headers/graphics.hpp"
 
 int main() {
-     chat::logic::core program;
-     program.loadSettings("release/settings");
-     
-     chat::graphics::core graphics;
-     program.setRenderTarget(graphics.renderTarget());
+    chat::logic::core program;
+    program.loadSettings("settings");
 
-     while (program.isRunning()) {
-         program.processEvents();
-     //    logic.processInput();
-         graphics.render();
-     }
+    chat::graphics::core graphics;
+    program.setRenderTarget(graphics.renderTarget());
 
-     return 0;
+    while (program.isRunning()) {
+        program.processEvents();
+        graphics.render();
+    }
+
+    return 0;
 }
 
 //exception handling
