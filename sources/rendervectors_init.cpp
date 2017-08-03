@@ -4,12 +4,10 @@
 //include all graphical units...
 
 void chat::graphics::core::init_render_vectors() {
-	chat::graphics::rendervector main_menu(var_rendertarget);
-	std::unique_ptr <interfaces::renderable> main_menu_textbox = std::make_unique(chat::graphics::textbox);
-	main_menu.add(main_menu_textbox);
-	var_renderlist.push_back(main_menu);
+    chat::graphics::rendervector main_menu(var_rendertarget);
 
-	//init render vectors
-	//create renderable objects, etc etc
-	//this is going to be a big ass function i guess
+    std::shared_ptr <interfaces::renderable> textbox = std::make_shared <chat::graphics::textbox> (var_rendertarget);
+    main_menu.add(textbox);
+
+    var_renderlist.push_back(main_menu);
 }

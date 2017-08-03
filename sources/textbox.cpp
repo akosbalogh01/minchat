@@ -4,19 +4,20 @@
 
 chat::graphics::textbox::textbox(const std::shared_ptr <sf::RenderWindow>& param) {
     var_rendertarget = param;
+    
+    update();
+    var_background.setFillColor(sf::Color::Blue);
+    var_background.setOutlineThickness(2);
+    var_background.setOutlineColor(sf::Color::Black);
+}
+
+void chat::graphics::textbox::update() {
+    sf::Vector2u window_size = var_rendertarget.get()->getSize();
+    var_background.setPosition(sf::Vector2f(65, window_size.y - 65));
+    var_background.setSize(sf::Vector2f(window_size.x - 80, 50));
 }
 
 void chat::graphics::textbox::render() {
-    //do stuff
+    var_rendertarget.get()->draw(var_background);
 }
 
-unsigned chat::graphics::textbox::position(textbox::pos_type type) {
-    switch (type) {
-        case textbox::TOP:    return var_textbox_properties[TOP];
-        case textbox::BOTTOM: return var_textbox_properties[BOTTOM];
-        case textbox::LEFT:   return var_textbox_properties[LEFT];
-        case textbox::RIGHT:  return var_textbox_properties[RIGHT];
-    }
-
-    return -1;
-}

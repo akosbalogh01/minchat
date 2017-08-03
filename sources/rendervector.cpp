@@ -14,6 +14,6 @@ void chat::graphics::rendervector::render() {
     }
 }
 
-void chat::graphics::rendervector::add(std::unique_ptr <interfaces::renderable>& param) {
-    var_vector.push_back(std::move(param));
+void chat::graphics::rendervector::add(std::shared_ptr <interfaces::renderable>& param) {
+    var_vector.push_back(param);
 }

@@ -9,21 +9,16 @@ namespace chat {
     namespace graphics {
         class textbox: public interfaces::renderable, public chat::graphics::unit {
             private:
-                unsigned    var_textbox_properties[6];
+                sf::RectangleShape var_background;
                 
                 unsigned    var_cursor_pos;
                 std::string var_cursor_front;
                 std::string var_cursor_back;
 
             public:
-                typedef enum {TOP = 0, BOTTOM = 1, LEFT = 2, RIGHT = 3} pos_type;
-                typedef enum {HEIGHT = 4, WIDTH = 5} size_type;
-
                 textbox(const std::shared_ptr <sf::RenderWindow>&);
 
-                unsigned position(textbox::pos_type);
-                unsigned size(textbox::size_type);
-
+                void update();
                 void render();
         }; 
     }

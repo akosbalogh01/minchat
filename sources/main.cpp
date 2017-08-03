@@ -4,7 +4,7 @@
 
 int main() {
     chat::logic::core program;
-    program.loadSettings("settings");
+    program.loadSettings("release/settings");
 
     chat::graphics::core graphics;
     program.setRenderTarget(graphics.renderTarget());
