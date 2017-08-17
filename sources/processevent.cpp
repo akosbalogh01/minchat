@@ -1,19 +1,20 @@
 #include <memory>
 #include "SFML/Graphics.hpp"
+#include "../headers/graphics.hpp"
 #include "../headers/logic.hpp"
 
-inline void closeWindow(std::shared_ptr <sf::RenderWindow>&, bool&);
-inline void resizeWindow(std::shared_ptr <sf::RenderWindow>&);
+inline void closeWindow(std::shared_ptr  <chat::graphics::core>&, bool&);
+inline void resizeWindow(std::shared_ptr <chat::graphics::core>&);
 
 void chat::logic::core::processEvents() {
-    while (var_rendertarget.get()->pollEvent(*var_event.get())) {
+    while (var_graphics.get()->renderTarget().get()->pollEvent(*var_event.get())) {
         switch (var_event.get()->type) {
             case sf::Event::Closed:
-                closeWindow(var_rendertarget, var_running);
+                closeWindow(var_graphics, var_running);
                 break;
 
             case sf::Event::Resized:
-                resizeWindow(var_rendertarget);
+                resizeWindow(var_graphics);
                 break;
 
             default:
@@ -23,12 +24,16 @@ void chat::logic::core::processEvents() {
     }
 }
 
-inline void closeWindow(std::shared_ptr <sf::RenderWindow>& var_rendertarget, bool& var_running) {
-    var_rendertarget.get()->close();
+inline void closeWindow(std::shared_ptr <chat::graphics::core>& var_graphics, bool& var_running) {
+    var_graphics.get()->renderTarget().get()->close();
     var_running = false;
 }
 
-inline void resizeWindow(std::shared_ptr <sf::RenderWindow>& var_rendertarget) {
-    sf::View temp_view(sf::FloatRect(0.f, 0.f, var_rendertarget.get()->getSize().x, var_rendertarget.get()->getSize().y));
-    var_rendertarget.get()->setView(temp_view);
+inline void resizeWindow(std::shared_ptr <chat::graphics::core>& var_graphics) {
+    float xxx = var_graphics.get()->renderTarget().get()->getSize().x;
+    float yyy = var_graphics.get()->renderTarget().get()->getSize().x;
+
+    sf::View temp_view(sf::FloatRect(0.f, 0.f, xxx, yyy));
+    var_graphics.get()->renderTarget().get()->setView(temp_view);
+//    var_graphics.get()->update();
 }

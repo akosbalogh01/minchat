@@ -14,6 +14,13 @@ void chat::graphics::rendervector::render() {
     }
 }
 
+void chat::graphics::rendervector::update() {
+    for (auto& index: var_vector) {
+        index.get()->update();
+    }
+}
+
+
 void chat::graphics::rendervector::add(std::shared_ptr <interfaces::renderable>& param) {
     var_vector.push_back(param);
 }

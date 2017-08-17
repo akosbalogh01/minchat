@@ -19,8 +19,8 @@ void chat::logic::core::loadSettings(const std::string& filepath) {
     var_running  = true;
 }
 
-void chat::logic::core::setRenderTarget(const std::shared_ptr <sf::RenderWindow>& param) {
-    var_rendertarget = param;
+void chat::logic::core::setRenderTarget(const std::shared_ptr <chat::graphics::core>& param) {
+    var_graphics = param;
 }
 
 void chat::logic::core::setRunning(const bool param) {

@@ -15,6 +15,7 @@ namespace chat {
 
             void add(std::shared_ptr <interfaces::renderable>&);
             void render();
+            void update();
         };
     }
 }

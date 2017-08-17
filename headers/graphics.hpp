@@ -7,7 +7,7 @@
 
 namespace chat {
     namespace graphics {
-	class core: public unit {
+	class core: public unit, public interfaces::updateable {
         public:
             typedef enum {MAIN = 0} rendervector_type;
 
@@ -22,6 +22,7 @@ namespace chat {
             const std::shared_ptr <sf::RenderWindow>& renderTarget() const;
 
             void render();
+            void update();
             void setRenderVectorTo(const rendervector_type);
 
             const sf::Vector2f& windowSize() const;

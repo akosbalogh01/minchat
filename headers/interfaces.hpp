@@ -3,8 +3,13 @@
 #include <memory>
 #include "SFML/Graphics.hpp"
 
-namespace interfaces {
-    class renderable {
+namespace interfaces  {
+    class updateable {
+    public:
+        virtual void update() = 0;
+    };
+    
+    class renderable: public updateable {
     public:
         virtual void render() = 0;
     };
