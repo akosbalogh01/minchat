@@ -7,10 +7,10 @@
 
 namespace chat {
     namespace graphics {
-        class textbox: public interfaces::renderable, public chat::graphics::unit {
+        class textbox: public interfaces::renderable, public unit {
             private:
                 sf::RectangleShape var_background;
-                
+
                 unsigned    var_cursor_pos;
                 std::string var_cursor_front;
                 std::string var_cursor_back;
@@ -20,7 +20,7 @@ namespace chat {
 
                 void update();
                 void render();
-        }; 
+        };
     }
 }
 
