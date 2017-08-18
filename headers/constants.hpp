@@ -5,7 +5,7 @@ namespace chat {
     namespace graphics {
         namespace distance {
             namespace textarea {
-                const unsigned int top    = 65;
+                const unsigned int top    = 50;
                 const unsigned int left   = 65;
                 const unsigned int bottom = 80;
                 const unsigned int right  = 15;
@@ -22,6 +22,13 @@ namespace chat {
 				const unsigned int left		= 0;
 				const unsigned int top		= 0;
 				const unsigned int textarea = 15;
+			}
+			
+			namespace tabsbar {
+				const unsigned int left 	= 65;
+				const unsigned int top		= 15;
+				const unsigned int right	= 15;
+				const unsigned int textarea = 30;
 			}
         }
     }
