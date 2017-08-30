@@ -4,7 +4,7 @@
 
 int main() {
     chat::logic::core program;
-    program.loadSettings("settings");
+    program.loadSettings("release/settings");
 
     std::shared_ptr <chat::graphics::core> graphics = std::make_shared <chat::graphics::core> ();
     program.setRenderTarget(graphics);

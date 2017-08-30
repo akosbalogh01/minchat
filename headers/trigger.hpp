@@ -1,0 +1,4 @@
+#ifndef CHAT_LOGIC_TRIGGER
+#define CHAT_LOGIC_TRIGGER
+
+#endif

@@ -3,10 +3,14 @@ echo "Compiling chat client..."
 
 g++ -std=c++14 -Wall    -c sources/main.cpp             	-o objects/main.o
 g++ -std=c++14 -Wall    -c sources/logic.cpp            	-o objects/logic.o
+g++ -std=c++14 -Wall    -c sources/trigger.cpp                  -o objects/trigger.o
 g++ -std=c++14 -Wall    -c sources/processevent.cpp     	-o objects/processevents.o
 g++ -std=c++14 -Wall    -c sources/user.cpp             	-o objects/user.o
 g++ -std=c++14 -Wall    -c sources/cursor.cpp           	-o objects/cursor.o
 g++ -std=c++14 -Wall    -c sources/textbox.cpp          	-o objects/textbox.o
+g++ -std=c++14 -Wall    -c sources/textarea.cpp                 -o objects/textarea.o
+g++ -std=c++14 -Wall    -c sources/sidebar.cpp                  -o objects/sidebar.o
+g++ -std=c++14 -Wall    -c sources/tabsbar.cpp                  -o objects/tabsbar.o
 g++ -std=c++14 -Wall    -c sources/graphics.cpp         	-o objects/graphics.o
 g++ -std=c++14 -Wall    -c sources/rendervector.cpp     	-o objects/rendervector.o
 g++ -std=c++14 -Wall	-c sources/rendervectors_init.cpp	-o objects/rendervectors_init.o

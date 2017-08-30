@@ -1,18 +1,13 @@
 #include <memory>
 #include <vector>
 #include "SFML/Graphics.hpp"
+#include "../headers/constants.hpp"
 #include "../headers/interfaces.hpp"
 #include "../headers/graphics.hpp"
-const std::string  windowname   = "Chat client";
-const unsigned int windowwidth  = 1024;
-const unsigned int windowheight = 768;
-const unsigned int framelimit   = 60;
-const sf::Color    bgcolor      = sf::Color(128, 128, 128);
-
 
 chat::graphics::core::core() {
-    var_rendertarget = std::make_shared <sf::RenderWindow> (sf::VideoMode(windowwidth, windowheight), windowname);
-    var_rendertarget.get()->setFramerateLimit(framelimit);
+    var_rendertarget = std::make_shared <sf::RenderWindow> (sf::VideoMode(chat::graphics::size::window::width, chat::graphics::size::window::height), chat::logic::windowname);
+    var_rendertarget.get()->setFramerateLimit(chat::logic::framelimit);
     init_render_vectors();
     setRenderVectorTo(MAIN);
 }
@@ -22,7 +17,7 @@ const std::shared_ptr <sf::RenderWindow>& chat::graphics::core::renderTarget() c
 }
 
 void chat::graphics::core::render() {
-    var_rendertarget.get()->clear(bgcolor);
+    var_rendertarget.get()->clear(chat::graphics::color::background);
     var_renderlist[var_selected_renderlist_index].render();
     var_rendertarget.get()->display();
 }
@@ -41,4 +36,12 @@ void chat::graphics::core::setRenderVectorTo(const chat::graphics::core::renderv
 
 	//throw some exception
 	//out of range?
+}
+
+chat::graphics::rendervector& chat::graphics::core::renderVector() {
+    return var_renderlist[var_selected_renderlist_index];
+}
+
+const chat::graphics::core::rendervector_type chat::graphics::core::renderVectorIndex() const {
+    return var_selected_renderlist_index;
 }

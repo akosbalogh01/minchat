@@ -6,6 +6,7 @@
 
 inline void closeWindow(std::shared_ptr  <chat::graphics::core>&, bool&);
 inline void resizeWindow(std::shared_ptr <chat::graphics::core>&);
+inline void mouseRelease(std::shared_ptr <chat::graphics::core>&);
 
 void chat::logic::core::processEvents() {
     while (var_graphics.get()->renderTarget().get()->pollEvent(*var_event.get())) {
@@ -16,6 +17,10 @@ void chat::logic::core::processEvents() {
 
             case sf::Event::Resized:
                 resizeWindow(var_graphics);
+                break;
+            
+            case sf::Event::MouseButtonReleased:
+                mouseRelease(var_graphics); 
                 break;
 
             default:
@@ -38,3 +43,29 @@ inline void resizeWindow(std::shared_ptr <chat::graphics::core>& var_graphics) {
     var_graphics.get()->renderTarget().get()->setView(temp_view);
     var_graphics.get()->update();
 }
+
+inline void mouseRelease(std::shared_ptr <chat::graphics::core>& var_graphics) {
+    switch (var_graphics.get()->renderVectorIndex()) {
+        case chat::graphics::core::MAIN:
+//            var_graphics.get()->renderVector().processTrigger(mouse_pos);  
+            break;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
