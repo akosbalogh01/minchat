@@ -1,6 +1,9 @@
+#include <cmath>
+#include <iostream>
 #include <memory>
 #include "SFML/Graphics.hpp"
 #include "../headers/constants.hpp"
+#include "../headers/graphics.hpp"
 #include "../headers/sidebar.hpp"
 
 chat::graphics::sidebar::sidebar(const std::shared_ptr <sf::RenderWindow>& param) {
@@ -16,6 +19,7 @@ chat::graphics::sidebar::sidebar(const std::shared_ptr <sf::RenderWindow>& param
     var_background_slider.setFillColor(sf::Color::Cyan);
     var_background_slider.setOutlineThickness(2);
     var_background_slider.setOutlineColor(sf::Color::Black);
+    var_background_slider.setPosition(sf::Vector2f(chat::graphics::distance::textarea::left - chat::graphics::distance::sidebar::textarea, 0));
 
     var_background_cover.setFillColor(sf::Color::Black);
     var_background_cover.setOutlineThickness(0);
@@ -25,16 +29,21 @@ chat::graphics::sidebar::sidebar(const std::shared_ptr <sf::RenderWindow>& param
 
 void chat::graphics::sidebar::render() {
     while (var_active && var_slider_width < chat::graphics::size::slider::width) {
-        var_slider_width+=3;
+        var_slider_width+=10;
+            //(sqrt(var_slider_width/chat::graphics::size::slider::width) - var_slider_width/chat::graphics::size::slider::width); //sqrt(param * distance) - distance
+        break;
     }
 
-    while (!var_active && var_slider_width > 2) {
-        var_slider_width-=3;
+    while (!var_active && var_slider_width > 9) {
+        var_slider_width-=10;
+        break;
     }
     
     if (var_active) {
         var_rendertarget.get()->draw(var_background_cover);
     }
+
+    update();
     var_rendertarget.get()->draw(var_background_slider);    
     var_rendertarget.get()->draw(var_background);
 }
@@ -53,4 +62,16 @@ void chat::graphics::sidebar::setActive(const bool& param) {
 
 const bool chat::graphics::sidebar::isActive() const {
     return var_active;
+}
+
+const bool chat::graphics::sidebar::interpret(const sf::Event& event) const {
+    if (event.type == sf::Event::MouseButtonReleased && (unsigned) event.mouseButton.x < chat::graphics::distance::textarea::left - chat::graphics::distance::sidebar::textarea) {
+        return true;
+    }
+
+    return false;
+}
+
+void chat::graphics::sidebar::trigger() {
+    var_active = !var_active;
 }

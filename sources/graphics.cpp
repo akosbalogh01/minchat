@@ -38,10 +38,10 @@ void chat::graphics::core::setRenderVectorTo(const chat::graphics::core::renderv
 	//out of range?
 }
 
-chat::graphics::rendervector& chat::graphics::core::renderVector() {
-    return var_renderlist[var_selected_renderlist_index];
-}
-
 const chat::graphics::core::rendervector_type chat::graphics::core::renderVectorIndex() const {
     return var_selected_renderlist_index;
+}
+
+void chat::graphics::core::processTriggers(const sf::Event& event) {
+    var_renderlist[var_selected_renderlist_index].processTrigger(event);    
 }

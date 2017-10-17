@@ -24,3 +24,16 @@ void chat::graphics::rendervector::update() {
 void chat::graphics::rendervector::add(std::shared_ptr <interfaces::renderable>& param) {
     var_vector.push_back(param);
 }
+
+void chat::graphics::rendervector::add(std::shared_ptr <interfaces::triggerable>& param) {
+    var_triggers.push_back(param);
+}
+
+void chat::graphics::rendervector::processTrigger(const sf::Event& event) {
+    for (const auto& index: var_triggers) {
+        if (index.get()->interpret(event)) {
+            index.get()->execute();
+            return; 
+        }
+    }
+}

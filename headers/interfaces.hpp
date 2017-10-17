@@ -14,6 +14,12 @@ namespace interfaces  {
         virtual void render() = 0;
     };
 
+    class triggerable {
+    public:
+        virtual const bool interpret(const sf::Event&) = 0;
+        virtual void execute() = 0;
+    };
+
     class sendable {
     public:
         virtual void send() = 0;
@@ -31,7 +37,7 @@ namespace chat {
     namespace graphics {
     	class unit {
 	protected:
-            std::shared_ptr <sf::RenderWindow> var_rendertarget;	
+            std::shared_ptr <sf::RenderWindow> var_rendertarget;
     	};
     }
 

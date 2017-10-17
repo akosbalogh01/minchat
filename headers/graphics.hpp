@@ -23,12 +23,11 @@ namespace chat {
 
             void render();
             void update();
+            void processTriggers(const sf::Event&);
             void setRenderVectorTo(const rendervector_type);
 
             const sf::Vector2f& windowSize() const;
-            rendervector& renderVector();
             const rendervector_type renderVectorIndex() const;
-            const bool in_range() const;
         };
     }
 }

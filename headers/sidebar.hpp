@@ -19,9 +19,11 @@ namespace chat {
 
             void render();
             void update();
+            const bool interpret(const sf::Event&) const;
             
             const bool isActive() const;
             void setActive(const bool&);
+            void trigger();
         };
     }
 }
