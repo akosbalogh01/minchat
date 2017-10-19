@@ -3,18 +3,33 @@ echo "Compiling chat client..."
 
 g++ -std=c++14 -Wall    -c sources/main.cpp             	-o objects/main.o
 g++ -std=c++14 -Wall    -c sources/logic.cpp            	-o objects/logic.o
-g++ -std=c++14 -Wall    -c sources/trigger.cpp                  -o objects/trigger.o
+g++ -std=c++14 -Wall    -c sources/trigger.cpp              -o objects/trigger.o
 g++ -std=c++14 -Wall    -c sources/processevent.cpp     	-o objects/processevents.o
 g++ -std=c++14 -Wall    -c sources/user.cpp             	-o objects/user.o
 g++ -std=c++14 -Wall    -c sources/cursor.cpp           	-o objects/cursor.o
-g++ -std=c++14 -Wall    -c sources/textbox.cpp          	-o objects/textbox.o
-g++ -std=c++14 -Wall    -c sources/textarea.cpp                 -o objects/textarea.o
-g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/sidebar/constructor.cpp     -o objects/gfx_sidebar_constructor.o
-g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/sidebar/render.cpp          -o objects/gfx_sidebar_render.o
-g++ -std=c++14 -Wall    -c sources/tabsbar.cpp                  -o objects/tabsbar.o
-g++ -std=c++14 -Wall    -c sources/graphics.cpp         	-o objects/graphics.o
+g++ -std=c++14 -Wall    -c sources/textarea.cpp             -o objects/textarea.o
+g++ -std=c++14 -Wall    -c sources/tabsbar.cpp              -o objects/tabsbar.o
 g++ -std=c++14 -Wall    -c sources/rendervector.cpp     	-o objects/rendervector.o
 g++ -std=c++14 -Wall	-c sources/rendervectors_init.cpp	-o objects/rendervectors_init.o
+
+g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/core/constructor.cpp	-o objects/gfx_core_constructor.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/core/methods.cpp		-o objects/gfx_core_methods.o
+g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/core/render.cpp			-o objects/gfx_core_render.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/core/triggers.cpp		-o objects/gfx_core_triggers.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/core/update.cpp			-o objects/gfx_core_update.o
+
+g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/sidebar/constructor.cpp     -o objects/gfx_sidebar_constructor.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/sidebar/methods.cpp			-o objects/gfx_sidebar_methods.o
+g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/sidebar/render.cpp          -o objects/gfx_sidebar_render.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/sidebar/triggers.cpp		-o objects/gfx_sidebar_triggers.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/sidebar/update.cpp			-o objects/gfx_sidebar_update.o
+
+g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/textbox/constructor.cpp     -o objects/gfx_textbox_constructor.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/textbox/methods.cpp			-o objects/gfx_textbox_methods.o
+g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/textbox/render.cpp          -o objects/gfx_textbox_render.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/textbox/triggers.cpp		-o objects/gfx_textbox_triggers.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/textbox/update.cpp			-o objects/gfx_textbox_update.o
+
 g++ -std=c++14 -Wall    -c sources/ini/inifile.cpp      	-o objects/inifile.o
 g++ -std=c++14 -Wall    -c sources/ini/key.cpp          	-o objects/inikey.o
 g++ -std=c++14 -Wall    -c sources/ini/load.cpp         	-o objects/iniload.o
