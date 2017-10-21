@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "../../headers/ini/key.hpp"
+#include "ini/key.hpp"
 
 ini::key::key(const std::string& param_key_id, const std::string& param_key_val) {
     var_id      = param_key_id;

@@ -1,8 +1,8 @@
 #include <stdexcept>
 #include <fstream>
-#include "../../headers/ini/inifile.hpp"
-#include "../../headers/ini/section.hpp"
-#include "../../headers/ini/key.hpp"
+#include "ini/inifile.hpp"
+#include "ini/section.hpp"
+#include "ini/key.hpp"
 
 void ini::inifile::save() const {
     save(var_filepath);

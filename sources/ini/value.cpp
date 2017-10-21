@@ -1,9 +1,9 @@
 #include <stdexcept>
 #include <string>
 #include <list>
-#include "../../headers/ini/inifile.hpp"
-#include "../../headers/ini/section.hpp"
-#include "../../headers/ini/key.hpp"
+#include "ini/inifile.hpp"
+#include "ini/section.hpp"
+#include "ini/key.hpp"
 
 // auxiliary function prototypes
 static const ini::section& find_section(const std::list <ini::section>&, const std::string&);

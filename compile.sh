@@ -36,10 +36,10 @@ g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/textbox/render.cpp  
 g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/textbox/triggers.cpp	-o objects/gfx_textbox_triggers.o
 g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/textbox/update.cpp		-o objects/gfx_textbox_update.o
 
-g++ -std=c++14 -Wall    -c sources/ini/inifile.cpp      	-o objects/inifile.o
-g++ -std=c++14 -Wall    -c sources/ini/key.cpp          	-o objects/inikey.o
-g++ -std=c++14 -Wall    -c sources/ini/load.cpp         	-o objects/iniload.o
-g++ -std=c++14 -Wall    -c sources/ini/save.cpp         	-o objects/inisave.o
-g++ -std=c++14 -Wall    -c sources/ini/section.cpp      	-o objects/inisection.o
-g++ -std=c++14 -Wall    -c sources/ini/value.cpp        	-o objects/inivalue.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/ini/inifile.cpp      	-o objects/ini/inifile.o
+g++ -std=c++14 -Wall    -I headers/ 	-c sources/ini/key.cpp          	-o objects/ini/inikey.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/ini/load.cpp         	-o objects/ini/iniload.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/ini/save.cpp         	-o objects/ini/inisave.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/ini/section.cpp      	-o objects/ini/inisection.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/ini/value.cpp        	-o objects/ini/inivalue.o
 g++ objects/* -o release/chatclient -lsfml-audio -lsfml-network -lsfml-graphics -lsfml-window -lsfml-system

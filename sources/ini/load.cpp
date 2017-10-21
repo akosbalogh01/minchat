@@ -2,9 +2,9 @@
 #include <string>
 #include <fstream>
 #include <list>
-#include "../../headers/ini/inifile.hpp"
-#include "../../headers/ini/section.hpp"
-#include "../../headers/ini/key.hpp"
+#include "ini/inifile.hpp"
+#include "ini/section.hpp"
+#include "ini/key.hpp"
 
 // auxiliary type definitions and functions
 typedef enum {SECTION, KEY, COMMENT, UNDEFINED} line_type;

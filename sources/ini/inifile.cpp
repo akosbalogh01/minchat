@@ -1,8 +1,8 @@
 #include <stdexcept>
 #include <iostream>
-#include "../../headers/ini/inifile.hpp"
-#include "../../headers/ini/section.hpp"
-#include "../../headers/ini/key.hpp"
+#include "ini/inifile.hpp"
+#include "ini/section.hpp"
+#include "ini/key.hpp"
 
 ini::inifile::inifile() {
     sections.clear();

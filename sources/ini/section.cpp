@@ -2,8 +2,8 @@
 #include <iostream>
 #include <string>
 #include <list>
-#include "../../headers/ini/section.hpp"
-#include "../../headers/ini/key.hpp"
+#include "ini/section.hpp"
+#include "ini/key.hpp"
 
 // auxiliary functions
 inline void unkown_key(const std::string& key_id) {
