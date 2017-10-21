@@ -18,17 +18,23 @@ g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/core/render.cpp			-o
 g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/core/triggers.cpp		-o objects/gfx_core_triggers.o
 g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/core/update.cpp			-o objects/gfx_core_update.o
 
-g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/sidebar/constructor.cpp     -o objects/gfx_sidebar_constructor.o
-g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/sidebar/methods.cpp			-o objects/gfx_sidebar_methods.o
-g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/sidebar/render.cpp          -o objects/gfx_sidebar_render.o
-g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/sidebar/triggers.cpp		-o objects/gfx_sidebar_triggers.o
-g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/sidebar/update.cpp			-o objects/gfx_sidebar_update.o
+g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/button/constructor.cpp	-o objects/gfx_button_constructor.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/button/methods.cpp		-o objects/gfx_button_methods.o
+g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/button/render.cpp       -o objects/gfx_button_render.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/button/triggers.cpp		-o objects/gfx_button_triggers.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/button/update.cpp		-o objects/gfx_button_update.o
 
-g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/textbox/constructor.cpp     -o objects/gfx_textbox_constructor.o
-g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/textbox/methods.cpp			-o objects/gfx_textbox_methods.o
-g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/textbox/render.cpp          -o objects/gfx_textbox_render.o
-g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/textbox/triggers.cpp		-o objects/gfx_textbox_triggers.o
-g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/textbox/update.cpp			-o objects/gfx_textbox_update.o
+g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/sidebar/constructor.cpp	-o objects/gfx_sidebar_constructor.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/sidebar/methods.cpp		-o objects/gfx_sidebar_methods.o
+g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/sidebar/render.cpp      -o objects/gfx_sidebar_render.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/sidebar/triggers.cpp	-o objects/gfx_sidebar_triggers.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/sidebar/update.cpp		-o objects/gfx_sidebar_update.o
+
+g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/textbox/constructor.cpp -o objects/gfx_textbox_constructor.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/textbox/methods.cpp		-o objects/gfx_textbox_methods.o
+g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/textbox/render.cpp      -o objects/gfx_textbox_render.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/textbox/triggers.cpp	-o objects/gfx_textbox_triggers.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/textbox/update.cpp		-o objects/gfx_textbox_update.o
 
 g++ -std=c++14 -Wall    -c sources/ini/inifile.cpp      	-o objects/inifile.o
 g++ -std=c++14 -Wall    -c sources/ini/key.cpp          	-o objects/inikey.o

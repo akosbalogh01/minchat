@@ -29,29 +29,44 @@ namespace chat {
             }
 
             namespace textbox {
-		const unsigned int textarea     = 15;
+                const unsigned int textarea = 15;
                 const unsigned int left   	= 65;
                 const unsigned int bottom 	= 15;
                 const unsigned int right  	= 15;
             }
-			
-	    namespace sidebar {
-	        const unsigned int left		= 0;
-		const unsigned int top		= 0;
-		const unsigned int textarea     = 15;
-	    }
-			
-	    namespace tabsbar {
-		const unsigned int left 	= 65;
-		const unsigned int top		= 15;
-		const unsigned int right	= 15;
-		const unsigned int textarea     = 30;
-	    }
+
+            namespace sidebar {
+                const unsigned int left		= 0;
+                const unsigned int top		= 0;
+                const unsigned int textarea = 15;
+                namespace buttons {
+                    namespace quit {
+                        const unsigned int left   = 0;
+                        const unsigned int bottom = 15;
+                    }
+                }
+            }
+
+            namespace tabsbar {
+                const unsigned int left 	= 65;
+                const unsigned int top		= 15;
+                const unsigned int right	= 15;
+                const unsigned int textarea = 30;
+            }
         }
 
         namespace size {
             namespace slider {
                 const unsigned int width        = 200;
+            }
+
+            namespace sidebar {
+                namespace buttons {
+                    namespace quit {
+                        const unsigned int height = 50;
+                        const unsigned int width  = 50;
+                    }
+                }
             }
 
             namespace window {

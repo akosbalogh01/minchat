@@ -8,11 +8,10 @@ namespace chat {
     namespace graphics {
         class sidebar: public interfaces::renderable, public unit {
         private:
+            enum {MAIN, SLIDER, COVER};
             bool               var_active;
             unsigned int       var_slider_width;
-            sf::RectangleShape var_background;
-            sf::RectangleShape var_background_slider;
-            sf::RectangleShape var_background_cover;
+            sf::RectangleShape var_background[3];
 
         public:
             sidebar(const std::shared_ptr <sf::RenderWindow>&);
@@ -20,7 +19,7 @@ namespace chat {
             void render();
             void update();
             const bool interpret(const sf::Event&) const;
-            
+
             const bool isActive() const;
             void setActive(const bool&);
             void trigger();

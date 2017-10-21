@@ -15,10 +15,10 @@ void chat::graphics::sidebar::render() {
     }
 
     if (var_active) {
-        var_rendertarget.get()->draw(var_background_cover);
+        var_rendertarget.get()->draw(var_background[COVER]);
     }
 
     update();
-    var_rendertarget.get()->draw(var_background_slider);
-    var_rendertarget.get()->draw(var_background);
+    var_rendertarget.get()->draw(var_background[SLIDER]);
+    var_rendertarget.get()->draw(var_background[MAIN]);
 }
