@@ -12,6 +12,7 @@ namespace chat {
     namespace graphics {
         namespace color {
             const sf::Color background(128, 128, 128);
+            const sf::Color buttons(192, 192, 192);
             const sf::Color sidebar();
             const sf::Color slider();
             const sf::Color cover();

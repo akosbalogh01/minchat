@@ -3,7 +3,7 @@
 #include "constants.hpp"
 #include "sidebar.hpp"
 
-chat::graphics::sidebar::sidebar(const std::shared_ptr <sf::RenderWindow>& param) {
+chat::graphics::sidebar::sidebar(const std::shared_ptr <sf::RenderWindow>& param): var_buttons(param) {
     var_rendertarget = param;
     var_active = false;
     var_slider_width = 0;

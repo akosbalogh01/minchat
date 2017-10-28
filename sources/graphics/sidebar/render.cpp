@@ -21,4 +21,5 @@ void chat::graphics::sidebar::render() {
     update();
     var_rendertarget.get()->draw(var_background[SLIDER]);
     var_rendertarget.get()->draw(var_background[MAIN]);
+    var_buttons.render();
 }
