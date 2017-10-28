@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Compiling chat client..."
 
-g++ -std=c++14 -Wall    -c sources/main.cpp             	-o objects/main.o
+g++ -std=c++14 -Wall    -I headers/     -c sources/main.cpp             	-o objects/main.o
 g++ -std=c++14 -Wall    -c sources/logic.cpp            	-o objects/logic.o
 g++ -std=c++14 -Wall    -c sources/trigger.cpp              -o objects/trigger.o
 g++ -std=c++14 -Wall    -c sources/processevent.cpp     	-o objects/processevents.o
@@ -36,10 +36,10 @@ g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/textbox/render.cpp  
 g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/textbox/triggers.cpp	-o objects/gfx_textbox_triggers.o
 g++ -std=c++14 -Wall    -I headers/		-c sources/graphics/textbox/update.cpp		-o objects/gfx_textbox_update.o
 
-g++ -std=c++14 -Wall    -I headers/		-c sources/ini/inifile.cpp      	-o objects/ini/inifile.o
-g++ -std=c++14 -Wall    -I headers/ 	-c sources/ini/key.cpp          	-o objects/ini/inikey.o
-g++ -std=c++14 -Wall    -I headers/		-c sources/ini/load.cpp         	-o objects/ini/iniload.o
-g++ -std=c++14 -Wall    -I headers/		-c sources/ini/save.cpp         	-o objects/ini/inisave.o
-g++ -std=c++14 -Wall    -I headers/		-c sources/ini/section.cpp      	-o objects/ini/inisection.o
-g++ -std=c++14 -Wall    -I headers/		-c sources/ini/value.cpp        	-o objects/ini/inivalue.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/ini/inifile.cpp      	-o objects/inifile.o
+g++ -std=c++14 -Wall    -I headers/ 	-c sources/ini/key.cpp          	-o objects/inikey.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/ini/load.cpp         	-o objects/iniload.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/ini/save.cpp         	-o objects/inisave.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/ini/section.cpp      	-o objects/inisection.o
+g++ -std=c++14 -Wall    -I headers/		-c sources/ini/value.cpp        	-o objects/inivalue.o
 g++ objects/* -o release/chatclient -lsfml-audio -lsfml-network -lsfml-graphics -lsfml-window -lsfml-system

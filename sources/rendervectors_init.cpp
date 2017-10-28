@@ -19,7 +19,6 @@ void chat::graphics::core::init_render_vectors() {
     main_menu.add(textarea);
     main_menu.add(tabsbar);
     main_menu.add(sidebar);
-    
 
     std::function <const bool(const sf::Event&)> sidebar_interpreter =  std::bind(&chat::graphics::sidebar::interpret, dynamic_cast <chat::graphics::sidebar*> (sidebar.get()), std::placeholders::_1);
     std::function <void()> sidebar_executor = std::bind(&chat::graphics::sidebar::trigger, dynamic_cast <chat::graphics::sidebar*> (sidebar.get()));
