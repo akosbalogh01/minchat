@@ -2,6 +2,10 @@
 #include "SFML/Graphics.hpp"
 #include "constants.hpp"
 #include "sidebar.hpp"
+#include "button.hpp"
+
+const sf::Vector2f button_size(chat::graphics::size::sidebar::buttons::quit::width, chat::graphics::size::sidebar::buttons::quit::height);
+void create_button(const std::shared_ptr <sf::RenderWindow>&, chat::graphics::rendervector&);
 
 chat::graphics::sidebar::sidebar(const std::shared_ptr <sf::RenderWindow>& param): var_buttons(param) {
     var_rendertarget = param;
@@ -22,4 +26,15 @@ chat::graphics::sidebar::sidebar(const std::shared_ptr <sf::RenderWindow>& param
     var_background[COVER].setOutlineThickness(0);
     var_background[COVER].setOutlineColor(sf::Color::Black);
     var_background[COVER].setPosition(sf::Vector2f(0, 0));
+    
+    for (unsigned int i = 0; i < 4; i++) {
+        create_button(var_rendertarget, var_buttons);
+        dynamic_cast <chat::graphics::button*> (var_buttons[i].get())->setPosition(sf::Vector2f(0, i*50));
+    }
+}
+
+
+void create_button(const std::shared_ptr <sf::RenderWindow>& var_rendertarget, chat::graphics::rendervector& var_buttons) { 
+    std::shared_ptr <interfaces::renderable> button = std::make_shared <chat::graphics::button> (var_rendertarget, button_size);
+    var_buttons.add(button);
 }

@@ -20,6 +20,8 @@ namespace chat {
             void render();
             void update();
             void processTrigger(const sf::Event&);
+
+            const std::shared_ptr <interfaces::renderable>& operator[] (const unsigned int);
         };
     }
 }

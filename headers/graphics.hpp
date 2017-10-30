@@ -10,6 +10,7 @@ namespace chat {
 	class core: public unit, public interfaces::updateable {
         public:
             typedef enum {MAIN = 0} rendervector_type;
+            static sf::Vector2i mousePosition;
 
         private:
             std::vector <chat::graphics::rendervector> var_renderlist;
