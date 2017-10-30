@@ -17,7 +17,8 @@ namespace chat {
 
            void render();
            void update();
-
+            
+           void move(const sf::Vector2f&);
            void setPosition(const sf::Vector2f&);
            void setSize(const sf::Vector2f&);
         };

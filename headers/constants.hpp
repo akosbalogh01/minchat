@@ -67,6 +67,11 @@ namespace chat {
                         const unsigned int height = 50;
                         const unsigned int width  = 50;
                     }
+
+                    namespace slider {
+                        const unsigned int height = 50;
+                        const unsigned int width  = 200;
+                    }
                 }
             }
 
