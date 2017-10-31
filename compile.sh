@@ -23,6 +23,11 @@ g++ -std=c++14 -Wall    -I headers/	-c sources/graphics/rectangle/methods.cpp	-o
 g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/rectangle/render.cpp	-o objects/gfx_rectangle_render.o
 g++ -std=c++14 -Wall    -I headers/	-c sources/graphics/rectangle/update.cpp	-o objects/gfx_rectangle_update.o
 
+g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/text/constructor.cpp	-o objects/gfx_text_constructor.o
+g++ -std=c++14 -Wall    -I headers/	-c sources/graphics/text/methods.cpp	        -o objects/gfx_text_methods.o
+g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/text/render.cpp	        -o objects/gfx_text_render.o
+g++ -std=c++14 -Wall    -I headers/	-c sources/graphics/text/update.cpp	        -o objects/gfx_text_update.o
+
 g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/button/constructor.cpp	-o objects/gfx_button_constructor.o
 g++ -std=c++14 -Wall    -I headers/	-c sources/graphics/button/methods.cpp		-o objects/gfx_button_methods.o
 g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/button/render.cpp           -o objects/gfx_button_render.o

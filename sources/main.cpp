@@ -1,4 +1,5 @@
 #include "SFML/Graphics.hpp"
+#include <memory>
 #include "logic.hpp"
 #include "graphics.hpp"
 
