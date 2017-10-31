@@ -11,10 +11,11 @@ namespace chat {
 
     namespace graphics {
         namespace color {
-            const sf::Color background(128, 128, 128);
-            const sf::Color buttons(192, 192, 192);
+            const sf::Color background(96, 96, 96);
+            const sf::Color buttons(160, 160, 160);
+            const sf::Color buttons_active(192, 192, 192);
             const sf::Color text(0, 0, 0);
-            const sf::Color sidebar();
+            const sf::Color sidebar(128, 128, 128);
             const sf::Color slider();
             const sf::Color cover();
             const sf::Color textbox();
@@ -63,6 +64,8 @@ namespace chat {
             }
 
             namespace sidebar {
+                const unsigned int width = 50;
+
                 namespace buttons {
                     namespace quit {
                         const unsigned int height = 50;

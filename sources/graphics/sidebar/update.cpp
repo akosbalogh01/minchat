@@ -2,12 +2,24 @@
 #include "constants.hpp"
 #include "graphics.hpp"
 #include "sidebar.hpp"
+#include "rectangle.hpp"
+#include "button.hpp"
 
-void chat::graphics::sidebar::update() {
-    sf::Vector2u window_size = var_rendertarget.get()->getSize();
+void chat::graphics::sidebar::core::update() {
+    var_main.update();
+    var_slider.update(); 
+}
 
-    var_background[MAIN].setPosition(sf::Vector2f(chat::graphics::distance::sidebar::left, chat::graphics::distance::sidebar::top));
-    var_background[MAIN].setSize(sf::Vector2f(chat::graphics::distance::textarea::left - chat::graphics::distance::sidebar::textarea, window_size.y));
-    var_background[COVER].setSize(sf::Vector2f(window_size.x, window_size.y));
-    var_background[SLIDER].setSize(sf::Vector2f(var_slider_width, window_size.y));
+void chat::graphics::sidebar::main::update() {
+    auto window_size = var_rendertarget.get()->getSize();
+    
+    dynamic_cast <chat::graphics::rectangle*> (var_vector[0].get())->setSize(sf::Vector2f(chat::graphics::size::sidebar::width, window_size.y));
+    dynamic_cast <chat::graphics::button*> (var_vector.last().get())->setPosition(sf::Vector2f(0, window_size.y - chat::graphics::size::sidebar::width));
+}
+
+void chat::graphics::sidebar::slider::update() {
+    auto window_size = var_rendertarget.get()->getSize();
+     
+    dynamic_cast <chat::graphics::rectangle*> (var_vector[0].get())->setSize(sf::Vector2f(chat::graphics::size::slider::width, window_size.y));
+    dynamic_cast <chat::graphics::button*> (var_vector.last().get())->setPosition(sf::Vector2f(200, window_size.y - chat::graphics::size::sidebar::width));
 }

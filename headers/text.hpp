@@ -9,12 +9,13 @@ namespace chat {
     namespace graphics {
         class text: public interfaces::renderable, public unit {
         private:
-            sf::Text var_text;
+            static sf::Font var_font;
+            sf::Text        var_text;
 
         public:
             text(const std::shared_ptr <sf::RenderWindow>&);
 
-            void render() const;
+            void render();
             void update();
 
             void setPosition(const sf::Vector2f&);

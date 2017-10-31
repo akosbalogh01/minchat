@@ -37,6 +37,10 @@ void chat::graphics::rendervector::processTrigger(const sf::Event& event) {
     }
 }
 
+std::shared_ptr <interfaces::renderable>& chat::graphics::rendervector::last() {
+    return var_vector.back();
+}
+
 namespace chat {
     namespace graphics {
         const std::shared_ptr <interfaces::renderable>& rendervector::operator[] (const unsigned int index) {
