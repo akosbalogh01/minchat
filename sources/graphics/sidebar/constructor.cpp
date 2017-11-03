@@ -27,14 +27,17 @@ chat::graphics::sidebar::main::main(const std::shared_ptr <sf::RenderWindow>& pa
 
 chat::graphics::sidebar::slider::slider(const std::shared_ptr <sf::RenderWindow>& param): var_vector(param) {
     var_rendertarget = param;
-
-    create_rectangle(var_vector, var_rendertarget, sf::Vector2f(chat::graphics::size::slider::width, chat::graphics::size::window::height), sf::Vector2f(200, 0), chat::graphics::color::sidebar);
+    
+    var_slider_active = INACTIVE;
+    var_slider_pos = chat::graphics::size::sidebar::width - chat::graphics::size::slider::width;
+    sf::Vector2f rectangle_pos(var_slider_pos, 0);
+    create_rectangle(var_vector, var_rendertarget, sf::Vector2f(chat::graphics::size::slider::width, chat::graphics::size::window::height), rectangle_pos, chat::graphics::color::sidebar);
 
     sf::Vector2f button_size(chat::graphics::size::slider::width, chat::graphics::size::sidebar::width);
-    create_button(var_vector, var_rendertarget, button_size, sf::Vector2f(200, 0)); 
-    create_button(var_vector, var_rendertarget, button_size, sf::Vector2f(200, 50)); 
-    create_button(var_vector, var_rendertarget, button_size, sf::Vector2f(200, 100)); 
-    create_button(var_vector, var_rendertarget, button_size, sf::Vector2f(200, chat::graphics::size::window::height - chat::graphics::size::sidebar::width)); 
+    create_button(var_vector, var_rendertarget, button_size, rectangle_pos); 
+    create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, 50)); 
+    create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, 100)); 
+    create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, chat::graphics::size::window::height - chat::graphics::size::sidebar::width)); 
 }
 
 
