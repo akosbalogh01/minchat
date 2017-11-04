@@ -23,7 +23,7 @@ namespace chat {
             void setCentered(const bool);
             void setString(const std::string&);
 
-            const sf::Vector2f& bounds() const;
+            const sf::Vector2f bounds() const;
         };
     }
 }
