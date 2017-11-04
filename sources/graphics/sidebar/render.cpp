@@ -1,7 +1,9 @@
 #include <memory>
 #include "SFML/Graphics.hpp"
 #include "constants.hpp"
-#include "sidebar.hpp"
+#include "sidebar/core.hpp"
+#include "sidebar/main.hpp"
+#include "sidebar/slider.hpp"
 #include "button.hpp"
 #include "rectangle.hpp"
 

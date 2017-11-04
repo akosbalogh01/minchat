@@ -2,7 +2,7 @@
 #include "../headers/graphics.hpp"
 #include "../headers/rendervector.hpp"
 #include "../headers/textbox.hpp"
-#include "../headers/sidebar.hpp"
+#include "sidebar/core.hpp"
 #include "../headers/textarea.hpp"
 #include "../headers/tabsbar.hpp"
 #include "../headers/trigger.hpp"

@@ -1,6 +1,6 @@
 #include <iostream>
 #include "SFML/Graphics.hpp"
-#include "sidebar.hpp"
+#include "sidebar/core.hpp"
 #include "constants.hpp"
 
 const bool chat::graphics::sidebar::core::interpret(const sf::Event& event) {

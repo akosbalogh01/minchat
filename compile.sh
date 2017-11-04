@@ -10,7 +10,7 @@ g++ -std=c++14 -Wall    -c sources/cursor.cpp           	-o objects/cursor.o
 g++ -std=c++14 -Wall    -c sources/textarea.cpp                 -o objects/textarea.o
 g++ -std=c++14 -Wall    -c sources/tabsbar.cpp                  -o objects/tabsbar.o
 g++ -std=c++14 -Wall    -c sources/rendervector.cpp             -o objects/rendervector.o
-g++ -std=c++14 -Wall	-c sources/rendervectors_init.cpp	-o objects/rendervectors_init.o
+g++ -std=c++14 -Wall	-I headers/     -c sources/rendervectors_init.cpp       	-o objects/rendervectors_init.o
 
 g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/core/constructor.cpp	-o objects/gfx_core_constructor.o
 g++ -std=c++14 -Wall    -I headers/	-c sources/graphics/core/methods.cpp		-o objects/gfx_core_methods.o

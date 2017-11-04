@@ -1,5 +1,5 @@
 #include <iostream>
-#include "sidebar.hpp"
+#include "sidebar/slider.hpp"
 
 void chat::graphics::sidebar::slider::toggle() {
     if (var_slider_active == ACTIVE) {var_slider_active = INACTIVE;}

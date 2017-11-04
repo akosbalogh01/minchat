@@ -1,9 +1,11 @@
 #include "SFML/Graphics.hpp"
 #include "constants.hpp"
 #include "graphics.hpp"
-#include "sidebar.hpp"
 #include "rectangle.hpp"
 #include "button.hpp"
+#include "sidebar/core.hpp"
+#include "sidebar/main.hpp"
+#include "sidebar/slider.hpp"
 
 void chat::graphics::sidebar::core::update() {
     var_main.update();
