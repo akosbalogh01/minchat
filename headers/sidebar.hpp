@@ -10,14 +10,17 @@ namespace chat {
         namespace sidebar {
             class slider: public interfaces::renderable, public unit {
             private:
-                unsigned int var_slider_width;
-                rendervector var_vector;
+                typedef enum {ACTIVE = 1, INACTIVE = -1} status;
+                status          var_slider_active;
+                int             var_slider_pos;
+                rendervector    var_vector;
 
             public:
                 slider(const std::shared_ptr <sf::RenderWindow>&);
 
                 void render();
                 void update();
+                void toggle();
             };
             
 
@@ -35,7 +38,7 @@ namespace chat {
 
 
 
-            class core: public interfaces::renderable, public unit {
+            class core: public interfaces::renderable, public interfaces::triggerable, public unit {
             private:
                 sidebar::main   var_main;
                 sidebar::slider var_slider;
@@ -45,7 +48,8 @@ namespace chat {
 
                 void render();
                 void update();
-
+                void execute();
+                const bool interpret(const sf::Event&);
             };
         }
     }

@@ -21,10 +21,10 @@ void chat::graphics::core::init_render_vectors() {
     //main_menu.add(tabsbar);
     main_menu.add(sidebar);
 
-    //std::function <const bool(const sf::Event&)> sidebar_interpreter =  std::bind(&chat::graphics::sidebar::interpret, dynamic_cast <chat::graphics::sidebar*> (sidebar.get()), std::placeholders::_1);
-    //std::function <void()> sidebar_executor = std::bind(&chat::graphics::sidebar::trigger, dynamic_cast <chat::graphics::sidebar*> (sidebar.get()));
-    //std::shared_ptr <interfaces::triggerable> sidebar_trigger = std::make_shared <chat::logic::trigger> (sf::Event::EventType::MouseButtonReleased, sidebar_interpreter, sidebar_executor);
-    //main_menu.add(sidebar_trigger);
+    std::function <const bool(const sf::Event&)> sidebar_interpreter =  std::bind(&chat::graphics::sidebar::core::interpret, dynamic_cast <chat::graphics::sidebar::core*> (sidebar.get()), std::placeholders::_1);
+    std::function <void()> sidebar_executor = std::bind(&chat::graphics::sidebar::core::execute, dynamic_cast <chat::graphics::sidebar::core*> (sidebar.get()));
+    std::shared_ptr <interfaces::triggerable> sidebar_trigger = std::make_shared <chat::logic::trigger> (sf::Event::EventType::MouseButtonReleased, sidebar_interpreter, sidebar_executor);
+    main_menu.add(sidebar_trigger);
     
 
     var_renderlist.push_back(main_menu);
