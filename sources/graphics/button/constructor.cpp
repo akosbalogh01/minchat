@@ -3,7 +3,7 @@
 #include "constants.hpp"
 #include "button.hpp"
 
-chat::graphics::button::button(const std::shared_ptr <sf::RenderWindow>& param) {
+chat::graphics::button::button(const std::shared_ptr <sf::RenderWindow>& param): var_text(param) {
     var_rendertarget = param;
 
     var_background.setFillColor(chat::graphics::color::buttons);
@@ -11,7 +11,7 @@ chat::graphics::button::button(const std::shared_ptr <sf::RenderWindow>& param) 
     var_background.setOutlineThickness(1);
 }
 
-chat::graphics::button::button(const std::shared_ptr <sf::RenderWindow>& param, const sf::Vector2f& size) {
+chat::graphics::button::button(const std::shared_ptr <sf::RenderWindow>& param, const sf::Vector2f& size): var_text(param) {
     var_rendertarget = param;
 
     var_background.setFillColor(chat::graphics::color::buttons); 
@@ -20,8 +20,7 @@ chat::graphics::button::button(const std::shared_ptr <sf::RenderWindow>& param, 
     var_background.setSize(size);
 }
 
-
-chat::graphics::button::button(const std::shared_ptr <sf::RenderWindow>& param, const sf::Vector2f& size, const sf::Vector2f& position) {
+chat::graphics::button::button(const std::shared_ptr <sf::RenderWindow>& param, const sf::Vector2f& size, const sf::Vector2f& position): var_text(param) {
     var_rendertarget = param;
 
     var_background.setFillColor(chat::graphics::color::buttons); 

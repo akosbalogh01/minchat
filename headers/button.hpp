@@ -1,14 +1,17 @@
 #ifndef CHAT_GFX_BUTTON
 #define CHAT_GFX_BUTTON
 #include <memory>
+#include <string>
 #include "SFML/Graphics.hpp"
 #include "interfaces.hpp"
+#include "text.hpp"
 
 namespace chat {
     namespace graphics {
         class button: public unit, public interfaces::renderable {
         private:
-            sf::RectangleShape var_background;
+            sf::RectangleShape   var_background;
+            chat::graphics::text var_text;
 
         public:
            button(const std::shared_ptr <sf::RenderWindow>&); 
@@ -17,10 +20,13 @@ namespace chat {
 
            void render();
            void update();
-            
+                    
            void move(const sf::Vector2f&);
            void setPosition(const sf::Vector2f&);
            void setSize(const sf::Vector2f&);
+
+           void assign(const sf::Texture&);
+           void assign(const std::string&);
         };
     }
 }

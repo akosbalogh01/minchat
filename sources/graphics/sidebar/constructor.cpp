@@ -1,3 +1,4 @@
+#include <string>
 #include <memory>
 #include "SFML/Graphics.hpp"
 #include "constants.hpp"
@@ -9,6 +10,7 @@
 
 inline void create_rectangle(chat::graphics::rendervector&, const std::shared_ptr <sf::RenderWindow>&, const sf::Vector2f&, const sf::Vector2f&, const sf::Color&);
 inline void create_button(chat::graphics::rendervector&, const std::shared_ptr <sf::RenderWindow>&, const sf::Vector2f&, const sf::Vector2f&);
+inline void create_button(chat::graphics::rendervector&, const std::shared_ptr <sf::RenderWindow>&, const sf::Vector2f&, const sf::Vector2f&, const std::string&);
 
 chat::graphics::sidebar::core::core(const std::shared_ptr <sf::RenderWindow>& param): var_main(param), var_slider(param) {
 
@@ -36,10 +38,10 @@ chat::graphics::sidebar::slider::slider(const std::shared_ptr <sf::RenderWindow>
     create_rectangle(var_vector, var_rendertarget, sf::Vector2f(chat::graphics::size::slider::width, chat::graphics::size::window::height), rectangle_pos, chat::graphics::color::sidebar);
 
     sf::Vector2f button_size(chat::graphics::size::slider::width, chat::graphics::size::sidebar::width);
-    create_button(var_vector, var_rendertarget, button_size, rectangle_pos); 
-    create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, 50)); 
-    create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, 100)); 
-    create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, chat::graphics::size::window::height - chat::graphics::size::sidebar::width)); 
+    create_button(var_vector, var_rendertarget, button_size, rectangle_pos, "User"); 
+    create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, 50), "Network"); 
+    create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, 100), "Settings"); 
+    create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, chat::graphics::size::window::height - chat::graphics::size::sidebar::width), "Quit"); 
 }
 
 
@@ -61,6 +63,16 @@ inline void create_button(chat::graphics::rendervector& target, const std::share
     chat::graphics::button* button = dynamic_cast <chat::graphics::button*> (new_button.get());
     button->setSize(size);
     button->setPosition(position);
+    
+    target.add(new_button);
+}
+
+inline void create_button(chat::graphics::rendervector& target, const std::shared_ptr <sf::RenderWindow>& param, const sf::Vector2f& size, const sf::Vector2f& position, const std::string& text) {
+    std::shared_ptr <interfaces::renderable> new_button = std::make_shared <chat::graphics::button> (param);
+    chat::graphics::button* button = dynamic_cast <chat::graphics::button*> (new_button.get());
+    button->setSize(size);
+    button->setPosition(position);
+    button->assign(text);
     
     target.add(new_button);
 }
