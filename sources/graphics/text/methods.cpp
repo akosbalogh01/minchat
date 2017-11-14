@@ -11,9 +11,25 @@ void chat::graphics::text::setFontSize(const unsigned int param) {
     var_text.setCharacterSize(param);
 }
 
-void chat::graphics::text::setCentered(const bool param) {
+void chat::graphics::text::setAlignment(const alignment& param) {
     sf::Vector2f size = bounds();
-    var_text.setOrigin(sf::Vector2f(floor(size.x - (size.x/(param + 1))), floor(size.y - (size.y/(param + 1))))); 
+    switch (param) {
+        case CENTERED: 
+            var_text.setOrigin(sf::Vector2f(floor(size.x/2), floor(size.y/2))); 
+            break;
+
+        case CENTERED_VERTICAL:
+            //var_text.setOrigin(sf::Vector2f(0, floor(size.y/2))); 
+            break;
+
+        case CENTERED_HORIZONTAL:
+            var_text.setOrigin(sf::Vector2f(floor(size.x/2), 0));
+            break;
+
+        case NORMAL:
+            var_text.setOrigin(sf::Vector2f(0, 0));
+            break;
+    }
 }
 
 void chat::graphics::text::setString(const std::string& param) {

@@ -1,6 +1,7 @@
 #include <string>
 #include "SFML/Graphics.hpp"
 #include "button.hpp"
+#include "text.hpp"
 
 void chat::graphics::button::setPosition(const sf::Vector2f& param) {
     var_background.setPosition(param);
@@ -21,5 +22,10 @@ void chat::graphics::button::assign(const sf::Texture&) {
 
 void chat::graphics::button::assign(const std::string& text) {
     var_text.setString(text);
-    //var_text.setCentered(true);
 }
+
+void chat::graphics::button::setTextAlignment(const chat::graphics::text::alignment& align) {
+    var_text.setAlignment(align);
+}
+
+

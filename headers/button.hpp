@@ -23,6 +23,7 @@ namespace chat {
                     
            void move(const sf::Vector2f&);
            void setPosition(const sf::Vector2f&);
+           void setTextAlignment(const chat::graphics::text::alignment&);
            void setSize(const sf::Vector2f&);
 
            void assign(const sf::Texture&);

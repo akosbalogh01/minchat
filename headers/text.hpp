@@ -13,6 +13,7 @@ namespace chat {
             sf::Text        var_text;
 
         public:
+            typedef enum {CENTERED, CENTERED_VERTICAL, CENTERED_HORIZONTAL, NORMAL} alignment;
             text(const std::shared_ptr <sf::RenderWindow>&);
 
             void render();
@@ -20,7 +21,7 @@ namespace chat {
 
             void setPosition(const sf::Vector2f&);
             void setFontSize(const unsigned int);
-            void setCentered(const bool);
+            void setAlignment(const alignment&);
             void setString(const std::string&);
 
             const sf::Vector2f bounds() const;

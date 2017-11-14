@@ -7,10 +7,11 @@
 #include "sidebar/slider.hpp"
 #include "button.hpp"
 #include "rectangle.hpp"
+#include "text.hpp"
 
 inline void create_rectangle(chat::graphics::rendervector&, const std::shared_ptr <sf::RenderWindow>&, const sf::Vector2f&, const sf::Vector2f&, const sf::Color&);
 inline void create_button(chat::graphics::rendervector&, const std::shared_ptr <sf::RenderWindow>&, const sf::Vector2f&, const sf::Vector2f&);
-inline void create_button(chat::graphics::rendervector&, const std::shared_ptr <sf::RenderWindow>&, const sf::Vector2f&, const sf::Vector2f&, const std::string&);
+inline void create_button(chat::graphics::rendervector&, const std::shared_ptr <sf::RenderWindow>&, const sf::Vector2f&, const sf::Vector2f&, const std::string&, const chat::graphics::text::alignment&);
 
 chat::graphics::sidebar::core::core(const std::shared_ptr <sf::RenderWindow>& param): var_main(param), var_slider(param) {
 
@@ -38,10 +39,10 @@ chat::graphics::sidebar::slider::slider(const std::shared_ptr <sf::RenderWindow>
     create_rectangle(var_vector, var_rendertarget, sf::Vector2f(chat::graphics::size::slider::width, chat::graphics::size::window::height), rectangle_pos, chat::graphics::color::sidebar);
 
     sf::Vector2f button_size(chat::graphics::size::slider::width, chat::graphics::size::sidebar::width);
-    create_button(var_vector, var_rendertarget, button_size, rectangle_pos, "User"); 
-    create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, 50), "Network"); 
-    create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, 100), "Settings"); 
-    create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, chat::graphics::size::window::height - chat::graphics::size::sidebar::width), "Quit"); 
+    create_button(var_vector, var_rendertarget, button_size, rectangle_pos, "User", chat::graphics::text::CENTERED_VERTICAL); 
+    create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, 50), "Network", chat::graphics::text::CENTERED_VERTICAL); 
+    create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, 100), "Settings", chat::graphics::text::CENTERED_VERTICAL); 
+    create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, chat::graphics::size::window::height - chat::graphics::size::sidebar::width), "Quit", chat::graphics::text::CENTERED_VERTICAL); 
 }
 
 
@@ -67,12 +68,15 @@ inline void create_button(chat::graphics::rendervector& target, const std::share
     target.add(new_button);
 }
 
-inline void create_button(chat::graphics::rendervector& target, const std::shared_ptr <sf::RenderWindow>& param, const sf::Vector2f& size, const sf::Vector2f& position, const std::string& text) {
+inline void create_button(chat::graphics::rendervector& target, const std::shared_ptr <sf::RenderWindow>& param, const sf::Vector2f& size, const sf::Vector2f& position, const std::string& text, const chat::graphics::text::alignment& align) {
     std::shared_ptr <interfaces::renderable> new_button = std::make_shared <chat::graphics::button> (param);
     chat::graphics::button* button = dynamic_cast <chat::graphics::button*> (new_button.get());
     button->setSize(size);
     button->setPosition(position);
     button->assign(text);
+    //button->setTextAlignment(align);
     
     target.add(new_button);
 }
+
+
