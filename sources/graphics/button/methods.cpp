@@ -28,4 +28,6 @@ void chat::graphics::button::setTextAlignment(const chat::graphics::text::alignm
     var_text.setAlignment(align);
 }
 
-
+void chat::graphics::button::setActiveColor(const sf::Color& param) {
+    var_color_active = param;
+}

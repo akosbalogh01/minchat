@@ -5,7 +5,7 @@
 inline bool intersects(const sf::RectangleShape&, const sf::Vector2i&);
 
 void chat::graphics::button::render() {
-    if (intersects(var_background, chat::graphics::core::mousePosition)) {var_background.setFillColor(chat::graphics::color::buttons_active);}
+    if (intersects(var_background, chat::graphics::core::mousePosition)) {var_background.setFillColor(var_color_active);}
 
     var_rendertarget.get()->draw(var_background);
     var_text.render();

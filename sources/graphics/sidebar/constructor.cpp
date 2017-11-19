@@ -29,7 +29,7 @@ chat::graphics::sidebar::main::main(const std::shared_ptr <sf::RenderWindow>& pa
     create_button(var_vector, var_rendertarget, button_size, sf::Vector2f(0, chat::graphics::size::window::height - chat::graphics::size::sidebar::width)); 
 }
 
-
+/*
 chat::graphics::sidebar::slider::slider(const std::shared_ptr <sf::RenderWindow>& param): var_vector(param) {
     var_rendertarget = param;
     
@@ -44,7 +44,7 @@ chat::graphics::sidebar::slider::slider(const std::shared_ptr <sf::RenderWindow>
     create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, 100), "Settings", chat::graphics::text::CENTERED_VERTICAL); 
     create_button(var_vector, var_rendertarget, button_size, rectangle_pos + sf::Vector2f(0, chat::graphics::size::window::height - chat::graphics::size::sidebar::width), "Quit", chat::graphics::text::CENTERED_VERTICAL); 
 }
-
+*/
 
 
 

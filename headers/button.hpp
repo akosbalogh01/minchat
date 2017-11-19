@@ -11,12 +11,14 @@ namespace chat {
         class button: public unit, public interfaces::renderable {
         private:
             sf::RectangleShape   var_background;
+            sf::Color            var_color_active;
             chat::graphics::text var_text;
 
         public:
            button(const std::shared_ptr <sf::RenderWindow>&); 
            button(const std::shared_ptr <sf::RenderWindow>&, const sf::Vector2f&);
            button(const std::shared_ptr <sf::RenderWindow>&, const sf::Vector2f&, const sf::Vector2f&);
+           button(const std::shared_ptr <sf::RenderWindow>&, const sf::Vector2f&, const sf::Vector2f&, const sf::Color&);
 
            void render();
            void update();
@@ -25,6 +27,7 @@ namespace chat {
            void setPosition(const sf::Vector2f&);
            void setTextAlignment(const chat::graphics::text::alignment&);
            void setSize(const sf::Vector2f&);
+           void setActiveColor(const sf::Color&);
 
            void assign(const sf::Texture&);
            void assign(const std::string&);

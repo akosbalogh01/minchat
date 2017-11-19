@@ -14,6 +14,7 @@ namespace chat {
             const sf::Color background(96, 96, 96);
             const sf::Color buttons(160, 160, 160);
             const sf::Color buttons_active(192, 192, 192);
+            const sf::Color buttons_quit_active(178, 34, 34); //firebrick
             const sf::Color text(0, 0, 0);
             const sf::Color sidebar(128, 128, 128);
             const sf::Color slider();
