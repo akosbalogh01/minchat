@@ -36,6 +36,7 @@ g++ -std=c++14 -Wall    -I headers/	-c sources/graphics/button/update.cpp		-o ob
 
 g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/sidebar/constructor.cpp	-o objects/gfx_sidebar_constructor.o
 g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/sidebar/slider_ctor.cpp     -o objects/gfx_sidebar_slider_ctor.o
+g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/sidebar/side_ctor.cpp       -o objects/gfx_sidebar_side_ctor.o
 g++ -std=c++14 -Wall    -I headers/	-c sources/graphics/sidebar/methods.cpp		-o objects/gfx_sidebar_methods.o
 g++ -std=c++14 -Wall    -I headers/     -c sources/graphics/sidebar/render.cpp          -o objects/gfx_sidebar_render.o
 g++ -std=c++14 -Wall    -I headers/	-c sources/graphics/sidebar/triggers.cpp	-o objects/gfx_sidebar_triggers.o
